@@ -1,6 +1,6 @@
 #!/bin/sh -x
 
-DIR=$HOME/src/vis
+DIR=$HOME/src/nstdio_test
 cd $DIR
 . ./connect_test.config
 
