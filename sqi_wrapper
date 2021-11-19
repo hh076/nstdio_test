@@ -1,0 +1,11 @@
+#!/bin/sh -x
+
+DIR=$HOME/src/vis
+cd $DIR
+. ./connect_test.config
+
+${SSH} -N -f -L ${PORT_I_SSHL}:localhost:${PORT_F_I_NSTDIO} ${USER_F}@${IP_F_I}
+#PP=$?
+./sqi localhost ${PORT_I_SSHL}
+#kill -9 $PP
+#./sqi localhost ${PORT_F_I_NSTDIO}

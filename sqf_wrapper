@@ -1,0 +1,7 @@
+#!/bin/sh -x
+
+DIR=$HOME/src/vis
+cd $DIR
+. ./connect_test.config
+
+./sqf 0.0.0.0 ${PORT_F_B_NSTDIO} 0.0.0.0 ${PORT_F_I_NSTDIO}
