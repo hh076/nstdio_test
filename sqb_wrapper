@@ -5,8 +5,7 @@ cd $DIR
 . ./connect_test.config
 
 ${SSH} -N -f -L ${PORT_B_SSHL}:localhost:${PORT_F_B_NSTDIO} ${USER_F}@${IP_F_B}
-PP=$?
-
+#PP=$?
 ./sqb localhost ${PORT_B_SSHL}
-
-kill -9 $PP
+#kill -9 $PP
+#./sqb localhost ${PORT_F_B_NSTDIO}
