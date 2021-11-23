@@ -1,6 +1,6 @@
 # nstdio_test
 
-backend　node から frontend node を経由して、interactive node にデータ転送する。
+backend node から frontend node を経由して、interactive node にデータ転送する。
 通信関数は　nstdio を使用している。事前に nstdio をインストールしておく必要がある。
 
 ## 基本的な考え方
