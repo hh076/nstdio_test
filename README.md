@@ -22,29 +22,33 @@ server-client間で双方向にデータ転送が可能となる。
 スパコンのフロントエンドサーバを想定している。
 backendからデータを受信して、データを加工して（今回はbackendからのデータを2倍して）interactiveに送信し、受信データと送信データを表示する。
 
-###interactive
+###　interactive
 
 フロントエンドとデータをやり取りしている解析ノードもしくはローカルのパソコンを想定している。frontendからデータを受信し、表示する。
 
 ## プログラムの使い方（sshを利用しない場合）
 
-###IPとPortの情報例
+###　IPとPortの情報例
 
 以下、Port番号は自由に選べますが、とりあえず以下の情報でそのまま動作すると思われる。
 nstdioでは、server側ではclientのIP(0.0.0.0も選択可能)とserverでの受信ポート番号を設定し、
 client側ではserverのIPとserverでの受信ポート番号を指定する。
 
-frontend:　　
-IP:0.0.0.0、Port:30332 (backend向け接続情報)　　
-IP:0.0.0.0、Port:30333 (interactive向け接続情報)　　
+frontend:
 
+IP:0.0.0.0、Port:30332 (backend向け接続情報)　
+
+IP:0.0.0.0、Port:30333 (interactive向け接続情報)　　
+　
 backend:　　
+
 IP:frontend-IP、Port:30332　　（IPはスパコンバックエンド内でのアドレスを設定する必要あり）
 
 interactive:　　
+
 IP:frontend-IP、Port:30333　　（IPはローカルパソコンからsshする際のアドレスを指定）
 
-###コマンド
+###　コマンド
 以下の順番で起動する。　　
 1. frontend上　　
 $ ./sqf 0.0.0.0 30332 0.0.0.0 30333　　
