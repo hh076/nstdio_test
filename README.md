@@ -1,14 +1,13 @@
 # nstdio_test
 
-backend node から frontend node を経由して、interactive node にデータ転送する。
+backend node から frontend node を経由して、interactive nodeにデータ転送する。
 通信関数は　nstdio を使用している。事前に nstdio をインストールしておく必要がある。
 
 # 基本的な考え方
 
 マシンが3台あり、それぞれ、backend node,frontend node,interactive nodeとする。
-nstdio　による接続の際に、frontendをサーバとし、backendとinteractiveをクライアントとする。
-これは、server-clientモデルの通信の際のセッション作成の際ののみの役割であり、セッションが確立された後は、
-server-client間で双方向にデータ転送が可能となる。
+nstdioによる接続の際にはserver側とclient側を設定する必要がある。今回はfrontendをサーバとし、backendとinteractiveをクライアントとする。
+これは、server-clientモデルの通信の際のセッション作成時のみの役割であり、セッションが確立された後は、server-client間で双方向にデータ転送が可能となる。
 
 # 各ノードの役割
 ## backend
