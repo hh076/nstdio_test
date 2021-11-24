@@ -75,7 +75,7 @@ $ ./sqb frontend-IP 30332　　
 $ ssh -N -f -L 10333:localhost:30333 username@frontend-IP  
 $ ./sqi frontend-IP 10333
 ##### backend上
-$ ssh -N -f -L 10333:localhost:30332 username@frontend-IP
+$ ssh -N -f -L 10333:localhost:30332 username@frontend-IP  
 $ ./sqb frontend-IP 10333
 
 
