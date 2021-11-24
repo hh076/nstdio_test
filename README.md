@@ -79,6 +79,18 @@ $ ./sqi frontend-IP 10333
 ##### backend上
 $ ssh -N -f -L 10333:localhost:30332 username@frontend-IP　　　（frontend-IPはバックエンドからのアクセス用IP）    
 $ ./sqb frontend-IP 10333
-
+### 注意点
+上記のsshコマンドは、バックグラウンドジョブとなるため、通信の終了後に自身でkillする必要がある。
+##　スクリプトの利用
+上記を行うスクリプトを用意した。その際に、configファイルにて設定を行う。
+##### interactiveとbackend上
+connect_test.configファイルを編集する。
+##　投入コマンド（以下の順に行う）
+##### frontend
+$ ./sqf_wrapper
+##### interactive
+$ ./sqi_wrapper
+##### backend
+$ ./sqb_wrapper
 
 
