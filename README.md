@@ -83,7 +83,7 @@ $ ./sqb frontend-IP 10333
 上記のsshコマンドは、バックグラウンドジョブとなるため、通信の終了後に自身でkillする必要がある。
 ##　スクリプトの利用
 上記を行うスクリプトを用意した。その際に、configファイルにて設定を行う。
-##### interactiveとbackend上
+##### interactiveとbackendで設定ファイルを編集
 connect_test.configファイルを編集する。
 ##　投入コマンド（以下の順に行う）
 ##### frontend
