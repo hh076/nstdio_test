@@ -68,7 +68,7 @@ $ ./sqi frontend-IP 30333　　
 $ ./sqb frontend-IP 30332　　
 
 # プログラムの使い方（SSH Portforwardingを利用する）
-一般のスパコンではssh接続を行う必要があり、さらにfrontendから外界のinteractiveへの直接接続と、frontendからバックエンドへの直接接続は一般には許されていない。そのため、backendからfrontendとintaractiveからfrontendへの方向でsshの Portforwardingのトンネルを作成しておき、この中にてnstdioの接続を行う。この際には、ローカルノードのinteractiveもしくはbackendのローカルポートへのアクセスを、リモートノードのfrontendにおける指定のポートに転送する、"-L"による指定を行う。frontend上では接続時にはserver側であるため受信側であり、portforwardingする必要はない。
+一般のスパコンではssh接続を行う必要があり、さらにfrontendから外界のinteractiveへの直接接続と、frontendからバックエンドへの直接接続は一般には許されていない。そのため、backendからfrontendならびにintaractiveからfrontendへの方向でsshの Portforwardingのトンネルを作成しておき、この中にてnstdioの接続を行う。この際には、ローカルノードのinteractiveもしくはbackendのローカルポートへのアクセスを、リモートノードのfrontendにおける指定のポートに転送する、"-L"による指定を行う。frontend上では接続時にはserver側であるため受信側であり、portforwardingする必要はない。
 上記の例で、interactiveからfrontendの30333番ポート、backendからfrontendの30332ポートにアクセスしたい場合には、以下のように行い、port-forwarding可能とする。
 その後、　localhostの指定のポートにアクセスする。
 ##### interactive上
