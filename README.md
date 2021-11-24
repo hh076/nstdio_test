@@ -30,7 +30,7 @@ backendからデータを受信して、データを加工してinteractiveに�
 
 以下、Port番号は自由に選べるが、とりあえず以下の情報でそのまま動作すると思われる（既存利用ポートと重複指定すると接続時にエラーとなる）。
 nstdioでは、server側ではclientのIP(0.0.0.0も選択可能)とserverでの受信ポート番号を指定し、client側ではserverのIPとserver側での受信ポート番号を指定する。
-backendとinteractiveが両方ともfrontendと接続するため、frontendでは相手IPと受信ポートをそれぞれ2種類準備する必要がある。
+このテストプログラムではbackendとinteractiveが両方ともfrontendと接続するため、frontendでは相手IPと受信ポートをそれぞれ2種類準備する必要がある。
 1台のマシンでテストする際には、backendとinteractiveで指定するfrontend-IPをlocalhostとすれば良い。
 
 ### frontend
@@ -47,7 +47,18 @@ IP:frontend-IP、Port:30332　　（IPはスパコンバックエンド内での
 
 IP:frontend-IP、Port:30333　　（IPはローカルパソコンからsshする際のアドレスを指定）
 
-## コマンド
+## コマンド（1台のコンピュータ内でテストする場合）
+以下の順番で起動する。　　
+* frontend上　　
+$ ./sqf 0.0.0.0 30332 0.0.0.0 30333　　
+　　
+* interactive上　　
+$ ./sqi localhost 30333　　
+　　
+* backend上　　
+$ ./sqb localhost 30332　　
+
+## コマンド（３台のコンピュータ内でテストする場合）
 以下の順番で起動する。　　
 * frontend上　　
 $ ./sqf 0.0.0.0 30332 0.0.0.0 30333　　
@@ -57,5 +68,5 @@ $ ./sqi frontend-IP 30333　　
 　　
 * backend上　　
 $ ./sqb frontend-IP 30332　　
-　　
+
 # プログラムの使い方SSH Portforwardingを利用する
