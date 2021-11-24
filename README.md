@@ -48,24 +48,30 @@ IP:frontend-IP、Port:30333　　（IPはローカルパソコンからsshする
 
 ## コマンド（1台のコンピュータ内でテストする場合）
 以下の順番で起動する。　　
-###### frontend上  
+##### frontend上  
 $ ./sqf 0.0.0.0 30332 0.0.0.0 30333　　
 　　
-###### interactive上  
+##### interactive上  
 $ ./sqi localhost 30333　　
 　　
-######  backend上  
+#####  backend上  
 $ ./sqb localhost 30332　　
 
 ## コマンド（３台のコンピュータ内でテストする場合）
 以下の順番で起動する。　　
-###### frontend上 
+##### frontend上 
 $ ./sqf 0.0.0.0 30332 0.0.0.0 30333　　
 　　
-###### interactive上　　
+##### interactive上　　
 $ ./sqi frontend-IP 30333　　
 　　
-###### backend上　　
+##### backend上　　
 $ ./sqb frontend-IP 30332　　
 
-# プログラムの使い方SSH Portforwardingを利用する
+# プログラムの使い方（SSH Portforwardingを利用する）
+ローカルポートへのアクセスを、リモートノードの指定のポートに転送する、"-L"による指定を行う。
+上記の例で、interactiveからfrontendの30333番ポートにアクセスしたい場合には、以下のように行い、port-forwarding可能とする。
+##### interactive上
+$ ssh -N -f -L 10333:localhost:30333 username@frontend-IP  
+
+
