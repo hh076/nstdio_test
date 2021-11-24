@@ -35,9 +35,8 @@ nstdioでは、server側ではclientのIP(0.0.0.0も選択可能)とserverでの
 
 ### frontend
 
-IP:0.0.0.0、Port:30332 (backend向け接続情報)　
-
-IP:0.0.0.0、Port:30333 (interactive向け接続情報)　　
+IP:0.0.0.0、Port:30332 (backend向け接続情報)　  
+IP:0.0.0.0、Port:30333 (interactive向け接続情報)　　  
 　
 ### backend
 
@@ -49,24 +48,24 @@ IP:frontend-IP、Port:30333　　（IPはローカルパソコンからsshする
 
 ## コマンド（1台のコンピュータ内でテストする場合）
 以下の順番で起動する。　　
-* frontend上　　
+###### frontend上  
 $ ./sqf 0.0.0.0 30332 0.0.0.0 30333　　
 　　
-* interactive上　　
+###### interactive上  
 $ ./sqi localhost 30333　　
 　　
-* backend上　　
+######  backend上  
 $ ./sqb localhost 30332　　
 
 ## コマンド（３台のコンピュータ内でテストする場合）
 以下の順番で起動する。　　
-* frontend上　　
+###### frontend上 
 $ ./sqf 0.0.0.0 30332 0.0.0.0 30333　　
 　　
-* interactive上　　
+###### interactive上　　
 $ ./sqi frontend-IP 30333　　
 　　
-* backend上　　
+###### backend上　　
 $ ./sqb frontend-IP 30332　　
 
 # プログラムの使い方SSH Portforwardingを利用する
