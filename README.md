@@ -14,12 +14,11 @@ nstdioによる接続の際にはserver側とclient側を設定する必要が�
 
 スパコン内のバックエンド計算ノードを想定している。
 データを準備して、frontendに送信する。
-実行コマンドは以下の通り。
 
 ## frontend
 
 スパコンのフロントエンドサーバを想定している。
-backendからデータを受信して、データを加工して（今回はbackendからのデータを2倍して）interactiveに送信し、受信データと送信データを表示する。
+backendからデータを受信して、データを加工してinteractiveに送信し、受信データと送信データを表示する。
 
 ## interactive
 
@@ -29,10 +28,10 @@ backendからデータを受信して、データを加工して（今回はback
 
 ## IPとPortの情報例
 
-以下、Port番号は自由に選べますが、とりあえず以下の情報でそのまま動作すると思われる。
-nstdioでは、server側ではclientのIP(0.0.0.0も選択可能)とserverでの受信ポート番号を設定し、
-client側ではserverのIPとserverでの受信ポート番号を指定する。
-1台のマシンでテストする際には、frontend-IPをlocalhostと指定すれば良い。
+以下、Port番号は自由に選べるが、とりあえず以下の情報でそのまま動作すると思われる（既存利用ポートと重複指定すると接続時にエラーとなる）。
+nstdioでは、server側ではclientのIP(0.0.0.0も選択可能)とserverでの受信ポート番号を指定し、client側ではserverのIPとserver側での受信ポート番号を指定する。
+backendとinteractiveが両方ともfrontendと接続するため、frontendでは相手IPと受信ポートをそれぞれ2種類準備する必要がある。
+1台のマシンでテストする際には、backendとinteractiveで指定するfrontend-IPをlocalhostとすれば良い。
 
 ### frontend
 
