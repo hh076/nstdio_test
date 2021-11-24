@@ -81,7 +81,7 @@ $ ssh -N -f -L 10333:localhost:30332 username@frontend-IP　　　（frontend-IP
 $ ./sqb frontend-IP 10333
 ### 注意点
 上記のsshコマンドは、バックグラウンドジョブとなるため、通信の終了後に自身でkillする必要がある。
-##　スクリプトの利用
+## スクリプトの利用
 上記を行うスクリプトを用意した。その際に、configファイルにて設定を行う。
 ##### interactiveとbackendで設定ファイルを編集
 connect_test.configファイルを編集する。
