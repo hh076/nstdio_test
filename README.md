@@ -62,10 +62,10 @@ $ ./sqb localhost 30332　　
 $ ./sqf 0.0.0.0 30332 0.0.0.0 30333　　
 　　
 ##### interactive上　　
-$ ./sqi frontend-IP 30333　　
+$ ./sqi frontend-IP 30333　　　　（frontend-IPは外からのアクセス用IP）  
 　　
 ##### backend上　　
-$ ./sqb frontend-IP 30332　　
+$ ./sqb frontend-IP 30332　　　　（frontend-IPはバックエンドからのアクセス用IP）  
 
 # プログラムの使い方（SSH Portforwardingを利用する）
 一般のスパコンではssh接続を行う必要があり、さらにfrontendから外界のinteractiveへの直接接続と、frontendからバックエンドへの直接接続は一般には許されていない。そのため、backendからfrontendならびにintaractiveからfrontendへの方向でsshの Portforwardingのトンネルを作成しておき、この中にてnstdioの接続を行う。この際には、ローカルノードのinteractiveもしくはbackendのローカルポートへのアクセスを、リモートノードのfrontendにおける指定のポートに転送する、"-L"による指定を行う。frontend上では接続時にはserver側であるため受信側であり、portforwardingする必要はない。
@@ -74,10 +74,10 @@ $ ./sqb frontend-IP 30332　　
 ##### frontend上 
 $ ./sqf 0.0.0.0 30332 0.0.0.0 30333　　
 ##### interactive上
-$ ssh -N -f -L 10333:localhost:30333 username@frontend-IP  
+$ ssh -N -f -L 10333:localhost:30333 username@frontend-IP　　　（frontend-IPは外からのアクセス用IP）  
 $ ./sqi frontend-IP 10333
 ##### backend上
-$ ssh -N -f -L 10333:localhost:30332 username@frontend-IP  
+$ ssh -N -f -L 10333:localhost:30332 username@frontend-IP　　　（frontend-IPはバックエンドからのアクセス用IP）    
 $ ./sqb frontend-IP 10333
 
 
