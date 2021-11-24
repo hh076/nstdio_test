@@ -85,7 +85,7 @@ $ ./sqb frontend-IP 10333
 上記を行うスクリプトを用意した。その際に、configファイルにて設定を行う。
 ##### interactiveとbackendで設定ファイルを編集
 connect_test.configファイルを編集する。
-##　投入コマンド（以下の順に行う）
+## 投入コマンド（以下の順に行う）
 ##### frontend
 $ ./sqf_wrapper
 ##### interactive
