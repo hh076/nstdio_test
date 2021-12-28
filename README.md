@@ -1,6 +1,6 @@
 # nstdio_test
 
-このテストプログラムでは、backend nodeからfrontend nodeを経由して、interactive nodeにデータを転送している。この際、通信関数にはnstdioを使用しており、事前にnstdioをインストールしておく必要がある。
+このテストプログラムでは通常の並列クラスタ計算機やいわゆるスパコンを対象に、backend nodeからfrontend nodeを経由して、interactive nodeへのデータ転送を可能としている。この際、通信関数にはnstdioを使用しており、事前にnstdioをインストールしておく必要がある。
 
 # 基本的な考え方
 
