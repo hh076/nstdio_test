@@ -35,24 +35,21 @@ nstdioでは、server側ではclientのIP(0.0.0.0も選択可能)とserverでの
 1台のマシンでテストする際には、backendとinteractiveで指定するfrontend-IPをlocalhostとすれば良い。
 
 ### frontend
-
 IP:0.0.0.0、Port:30332 (backend向け接続情報)　  
 IP:0.0.0.0、Port:30333 (interactive向け接続情報)　　  
 　
 ### backend
-
 IP:frontend-IP、Port:30332　　（IPはスパコンバックエンド内でのアドレスを設定する必要あり）
 
 ### interactive
-
 IP:frontend-IP、Port:30333　　（IPはローカルパソコンからsshする際のアドレスを指定）
 
 ## コマンド（1台のコンピュータ内でテストする場合）
 以下の順番で起動する。　　
 ##### すべて同じコンピュータ上で  
-$ ./sqf 0.0.0.0 30332 0.0.0.0 30333　　
-$ ./sqi localhost 30333　　
-$ ./sqb localhost 30332　　
+$ ./sqf 0.0.0.0 30332 0.0.0.0 30333  
+$ ./sqi localhost 30333  
+$ ./sqb localhost 30332  
 
 ## コマンド（３台のコンピュータ内でテストする場合）
 以下の順番で起動する。　　
