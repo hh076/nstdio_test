@@ -1,6 +1,6 @@
 # nstdio_test
 
-このプログラムでは、通常の並列クラスタ計算機やいわゆるスパコンを対象とした、backend nodeからfrontend nodeを経由して、interactive nodeへのデータ転送の仕組みを実装している。経由の際にはバケツリレーを行っている。この際、通信関数には[nstdio](https://github.com/y-morie/nstdio)を使用しており、事前にnstdioをインストールしておく必要がある。[nstdio](https://github.com/y-morie/nstdio)は主にC言語を対象とした、サーバ・クライアントモデルの接続方法を用いた非同期型の簡素で有用な通信ライブラリであり、プリミティブなデーモンプログラムを簡単に作成することも可能である。
+このプログラムでは、通常の並列クラスタ計算機やいわゆるスパコンを対象とした、backend nodeからfrontend nodeを経由して、interactive nodeへのデータ転送の仕組みを実装している。経由の際にはバケツリレーを行っている。この際、通信関数には[nstdio](https://github.com/y-morie/nstdio)を使用しており、事前にnstdioをインストールしておく必要がある。[nstdio](https://github.com/y-morie/nstdio)は主にC言語を対象とした、サーバ・クライアントモデルの接続方法を用いた非同期型の簡素で有用な通信ライブラリであり、プリミティブなデーモンプログラムを簡単に作成することも可能である。  
 [第182回HPC研究発表会](http://www.ipsj.or.jp/kenkyukai/event/hpc182.html)発表済み
 
 
